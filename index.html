@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PA1 - Variant 15</title>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #07101a;
+    }
+
+    #glCanvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      cursor: grab;
+    }
+
+    #glCanvas:active {
+      cursor: grabbing;
+    }
+
+    #info {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      max-width: 390px;
+      padding: 12px 15px;
+      color: #edf6ff;
+      background: rgba(7, 16, 26, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+      line-height: 1.45;
+      font-size: 14px;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
+    }
+
+    #info strong {
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="glCanvas"></canvas>
+
+  <div id="info">
+    <strong>PA1 - Variant 15</strong><br>
+    Conical Surface with a Directrix Curve in the Form of Cartesian Folium<br>
+    L = 4, T = 2, B = 0.5<br>
+    U-curves - cyan, V-curves - orange<br>
+    Drag - rotate, mouse wheel - zoom
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
