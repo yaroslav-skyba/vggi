@@ -1,0 +1,199 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    PA2 - Variant 15
+  </title>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      background: #07101a;
+    }
+
+    #glCanvas {
+      display: block;
+
+      width: 100vw;
+      height: 100vh;
+
+      cursor: grab;
+    }
+
+    #glCanvas:active {
+      cursor: grabbing;
+    }
+
+    #controls {
+      position: fixed;
+
+      top: 18px;
+      left: 18px;
+
+      width: 330px;
+
+      padding: 14px 16px;
+
+      color: #edf6ff;
+
+      background:
+        rgba(
+          7,
+          16,
+          26,
+          0.86
+        );
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.16
+        );
+
+      border-radius: 10px;
+
+      line-height: 1.45;
+
+      font-size: 14px;
+
+      backdrop-filter: blur(4px);
+    }
+
+    #controls strong {
+      font-size: 16px;
+    }
+
+    .slider-row {
+      margin-top: 12px;
+    }
+
+    .slider-row label {
+      display: flex;
+
+      justify-content: space-between;
+
+      margin-bottom: 4px;
+
+      font-weight: bold;
+    }
+
+    .slider-row input {
+      width: 100%;
+    }
+
+    .hint {
+      margin-top: 12px;
+
+      font-size: 13px;
+
+      color: #bfd4e8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas
+    id="glCanvas"
+  ></canvas>
+
+  <div id="controls">
+
+    <strong>
+      PA2 - Variant 15
+    </strong>
+
+    <br>
+
+    Conical Surface with Cartesian Folium Directrix
+
+    <br>
+
+    Phong shading
+
+    <br>
+
+    Facet Angle Weighted Average normals
+
+    <div class="slider-row">
+
+      <label>
+        <span>U granularity</span>
+
+        <span id="uValue">
+          32
+        </span>
+      </label>
+
+      <input
+        id="uSlider"
+        type="range"
+        min="4"
+        max="120"
+        value="32"
+        step="1"
+      >
+
+    </div>
+
+    <div class="slider-row">
+
+      <label>
+        <span>V granularity</span>
+
+        <span id="vValue">
+          48
+        </span>
+      </label>
+
+      <input
+        id="vSlider"
+        type="range"
+        min="8"
+        max="120"
+        value="48"
+        step="1"
+      >
+
+    </div>
+
+    <div class="hint">
+      Drag - rotate<br>
+      Mouse wheel - zoom<br>
+      Yellow sphere - point light source<br>
+      Light source rotates automatically
+    </div>
+
+  </div>
+
+  <script
+    type="module"
+    src="./main.js"
+  ></script>
+
+</body>
+
+</html>
