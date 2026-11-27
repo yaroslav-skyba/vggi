@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Control Task · Variant 15</title>
+  <style>
+    *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Segoe UI,Arial,sans-serif;background:#0c1518;color:#e6f1ed}
+    canvas{display:block;width:100vw;height:100vh;cursor:grab}canvas:active{cursor:grabbing}
+    #panel{position:fixed;top:18px;left:18px;width:328px;max-height:calc(100vh - 36px);overflow:auto;padding:19px 20px;background:rgba(13,28,31,.94);border:1px solid #375453;border-radius:13px;box-shadow:0 12px 40px #0006}
+    h1{margin:0 0 6px;font-size:21px;letter-spacing:.2px} .sub{font-size:12px;line-height:1.6;color:#b5cfc7;margin-bottom:13px}
+    .pill{display:inline-block;background:#244b43;color:#c0f1d7;padding:7px 9px;border-radius:5px;font-size:12px;font-weight:700;margin-bottom:12px}
+    .line{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-top:10px}input[type=range]{width:100%;accent-color:#87d7b3;margin:7px 0}
+    hr{border:0;border-top:1px solid #3b5854;margin:15px 0}label.option{display:flex;gap:10px;align-items:center;font-size:13px;margin:12px 0}input[type=checkbox]{accent-color:#87d7b3}
+    .help{font-size:12px;line-height:1.75;color:#b5cfc7}.status{font-size:11px;color:#a8d9c4;line-height:1.5;margin-top:10px}
+    .note{position:fixed;right:16px;bottom:16px;background:#142a2bcc;border:1px solid #375453;padding:10px 14px;border-radius:8px;font-size:12px;color:#d9e6c5}
+    @media(max-width:560px){#panel{width:280px;padding:12px;top:7px;left:7px}.note{display:none}}
+  </style>
+</head>
+<body>
+  <canvas id="glCanvas"></canvas>
+  <section id="panel">
+    <h1>Textured Surface · Variant 15</h1>
+    <div class="sub">Conical Surface with Cartesian Folium Directrix<br>Phong shading · Facet Angle Weighted Average normals</div>
+    <span class="pill">Gram–Schmidt: TANGENT PRIORITY</span>
+    <div class="line"><span>U granularity</span><span id="uValue">32</span></div>
+    <input id="uSlider" type="range" min="4" max="120" value="32">
+    <div class="line"><span>V granularity</span><span id="vValue">48</span></div>
+    <input id="vSlider" type="range" min="8" max="120" value="48">
+    <div class="line"><span>UV rotation</span><span id="angleValue">0°</span></div>
+    <input id="angleSlider" type="range" min="-90" max="90" value="0" step="15">
+    <hr>
+    <label class="option"><input type="checkbox" id="diffuseEnabled" checked>Diffuse texture</label>
+    <label class="option"><input type="checkbox" id="specularEnabled" checked>Specular texture</label>
+    <label class="option"><input type="checkbox" id="normalEnabled" checked>Normal texture</label>
+    <hr>
+    <div class="help">Drag — rotate · Mouse wheel — zoom<br>Yellow sphere — moving point light<br>Rotate UVs to verify texture-aligned tangents</div>
+    <div class="status" id="textureStatus">Loading texture maps…</div>
+  </section>
+  <div class="note">● Moving point light</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
